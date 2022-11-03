@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontSize: 18,
     lineHeight: 28,
-    fontWeight:"400",
+    fontWeight: '500',
+    color: '#383838',
   },
   pricesText: {
     fontSize: 18,
@@ -27,12 +28,13 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
   },
   priceText: {
-    fontWeight: 'bold',
+    fontWeight: '900',
     color: 'black',
   },
   totalPriceText: {
     color: '#5b5b5b',
     textDecorationLine: 'underline',
+    fontSize: 16,
   },
 });
 
