@@ -1,8 +1,13 @@
 import {View, Text, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+
 
 const GuestsScreen = () => {
+
+  const navigation = useNavigation();
+
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
@@ -72,28 +77,47 @@ const GuestsScreen = () => {
     );
   };
   return (
-    <View>
-      <Section
-        title="Adults"
-        subTitle="Ages 13 or above"
-        HandlerIncrease={adultsHandlerIncrease}
-        HandlerDecrease={adultsHandlerDecrease}
-        value={adults}
-      />
-      <Section
-        title="Children"
-        subTitle="Ages 2-12"
-        HandlerIncrease={childrenHandlerIncrease}
-        HandlerDecrease={childrenHandlerDecrease}
-        value={children}
-      />
-      <Section
-        title="Infants"
-        subTitle="Under 2"
-        HandlerIncrease={infantsHandlerIncrease}
-        HandlerDecrease={infantsHandlerDecrease}
-        value={infants}
-      />
+    <View style={{justifyContent: 'space-between', height: '100%'}}>
+      <View>
+        <Section
+          title="Adults"
+          subTitle="Ages 13 or above"
+          HandlerIncrease={adultsHandlerIncrease}
+          HandlerDecrease={adultsHandlerDecrease}
+          value={adults}
+        />
+        <Section
+          title="Children"
+          subTitle="Ages 2-12"
+          HandlerIncrease={childrenHandlerIncrease}
+          HandlerDecrease={childrenHandlerDecrease}
+          value={children}
+        />
+        <Section
+          title="Infants"
+          subTitle="Under 2"
+          HandlerIncrease={infantsHandlerIncrease}
+          HandlerDecrease={infantsHandlerDecrease}
+          value={infants}
+        />
+      </View>
+      <View>
+        <Pressable
+
+        //burada explore yerine search sayfası koyulmalı
+        onPress={()=>navigation.navigate("Explore")}
+          style={{
+            marginBottom: 20,
+            backgroundColor: '#f15454',
+            alignItems: 'center',
+            justifyContent:"center",
+            height:50,
+            marginHorizontal:20,
+            borderRadius:10
+          }}>
+          <Text style={{fontSize:16,color:"white",fontWeight:"bold"}}>Search</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

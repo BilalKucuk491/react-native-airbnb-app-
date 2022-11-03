@@ -2,8 +2,12 @@ import {View, ImageBackground, Text, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
-
+import { useNavigation } from '@react-navigation/native';
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
+
   return (
     <View>
       {/* search bard */}
@@ -13,7 +17,7 @@ const HomeScreen = () => {
         style={styles.backgroundImage}>
         <Pressable
           style={styles.searchButton}
-          onPress={() => console.warn('search btn cliked')}>
+          onPress={() => navigation.navigate("Destination Search")}>
           <FontistoIcon name="search" size={24} color={"#f15454"} />
           <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
