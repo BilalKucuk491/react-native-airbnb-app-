@@ -12,18 +12,15 @@ import HomeScreen from './src/screens/Home';
 import Post from './src/components/Post';
 import feed from './assets/data/feed';
 
+import SearchResultsScreen from './src/screens/SearchResults';
+
 const App = () => {
-  const post1 = feed[2];
 
   return (
     <View>
       <SafeAreaView>
         {/* <HomeScreen /> */}
-        <ScrollView>
-          {feed.map(item => (
-            <Post key={item.id} post={item} />
-          ))}
-        </ScrollView>
+        <SearchResultsScreen/>
       </SafeAreaView>
     </View>
   );
