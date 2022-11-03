@@ -14,7 +14,7 @@ const HomeScreen = () => {
         <Pressable
           style={styles.searchButton}
           onPress={() => console.warn('search btn cliked')}>
-          <FontistoIcon name="search" size={24} color="#f15454" />
+          <FontistoIcon name="search" size={24} color={"#f15454"} />
           <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
         {/* title */}
