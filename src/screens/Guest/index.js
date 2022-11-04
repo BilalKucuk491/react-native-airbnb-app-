@@ -1,11 +1,9 @@
 import {View, Text, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import styles from './styles';
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
 
 const GuestsScreen = () => {
-
   const navigation = useNavigation();
 
   const [adults, setAdults] = useState(0);
@@ -103,19 +101,27 @@ const GuestsScreen = () => {
       </View>
       <View>
         <Pressable
-
-        //burada explore yerine search sayfası koyulmalı
-        onPress={()=>navigation.navigate("Explore")}
+          //burada explore yerine search sayfası koyulmalı
+          onPress={() =>
+            navigation.navigate('Home', {
+              screen: 'Explore',
+              params: {
+                screen: 'SearchResults',
+              },
+            })
+          }
           style={{
             marginBottom: 20,
             backgroundColor: '#f15454',
             alignItems: 'center',
-            justifyContent:"center",
-            height:50,
-            marginHorizontal:20,
-            borderRadius:10
+            justifyContent: 'center',
+            height: 50,
+            marginHorizontal: 20,
+            borderRadius: 10,
           }}>
-          <Text style={{fontSize:16,color:"white",fontWeight:"bold"}}>Search</Text>
+          <Text style={{fontSize: 16, color: 'white', fontWeight: 'bold'}}>
+            Search
+          </Text>
         </Pressable>
       </View>
     </View>
