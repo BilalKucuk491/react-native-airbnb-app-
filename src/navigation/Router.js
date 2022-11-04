@@ -7,6 +7,7 @@ import HomeTabNavigator from './HomeTabNavigator';
 // screens
 import DestinationSearchScreen from '../screens/DestinationSearch';
 import GuestsScreen from '../screens/Guest';
+import ExploreNavigator from './ExploreNavigator';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,7 @@ const Router = () => {
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Destination Search"
           component={DestinationSearchScreen}
           options={{
@@ -35,7 +36,8 @@ const Router = () => {
           options={{
             title: 'How many people',
           }}
-        /> 
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
