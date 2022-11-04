@@ -5,7 +5,7 @@ import styles from './styles';
 import searchResults from '../../../assets/data/search';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
-
+  
 const DestinationSearchScreen = () => {
 
   const navigation = useNavigation();
@@ -14,6 +14,7 @@ const DestinationSearchScreen = () => {
   return (
     <View style={styles.container}>
       {/* input components */}
+
       <TextInput
         style={styles.textInput}
         placeholder="Where are you going?"
